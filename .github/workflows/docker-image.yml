@@ -40,7 +40,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: ./ConsiliaAPI
+          context: ./ArpanBot
           push: true
           build-args: |
             DISCORD_API_KEY_ARG=${{ secrets.DISCORD_API_KEY }}
