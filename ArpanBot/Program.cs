@@ -49,17 +49,13 @@ namespace ArpanBot
 
             SocketUserMessage userMessage = (SocketUserMessage) m;
 
-            if (userMessage.Author.Id == 373626821486575616 && userMessage.Content.ToLower().Contains("rust"))
-            {
-                await userMessage.ReplyAsync("C# is better than rust.");
-                return;
-            }
+         
             
             string[] args = userMessage.Content.Split(' ');
             if (args.Length >= 2 && args[0] == COMMAND_PREFIX && args[1] == "help")
             {
                 await userMessage.ReplyAsync($"" +
-                                             $"__NathanBot Help__\n" +
+                                             $"__ArpanBot Help__\n" +
                                              $"**!arpan help** - this screen\n" +
                                              $"**!arpan [text] ** - get arpan to say something");
              return;
