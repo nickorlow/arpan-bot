@@ -38,7 +38,37 @@ namespace ArpanBot
             await _client.StartAsync();
             await Task.Delay(-1);
         }
-        
+
+        public async Task AprilFools(SocketMessage m)
+        {
+            await m.AddReactionAsync(Emote.Parse(":regional_indicator_c:"), RequestOptions.Default);
+            await m.AddReactionAsync(Emote.Parse(":hash:"), RequestOptions.Default);
+        }
+
+        public bool CSharpOrRust(string text)
+        {
+            bool isCsharp =  (text.Contains("c#", StringComparison.InvariantCultureIgnoreCase) ||
+                    (text.Contains("c", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
+                    (text.Contains("c", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)) ||
+                    (text.Contains("see", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
+                    (text.Contains("see", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)) ||
+                    (text.Contains("sea", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
+                    (text.Contains("sea", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)) ||
+                    (text.Contains("cee", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
+                    (text.Contains("cee", StringComparison.InvariantCultureIgnoreCase) &&
+                     text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)));
+
+            bool isRust = (text.Contains("rust", StringComparison.InvariantCultureIgnoreCase)) ||
+                          (text.Remove(' ').Contains("rust", StringComparison.InvariantCultureIgnoreCase));
+            return isRust || isCsharp;
+        }
 
         private async Task CheckMessage(SocketMessage m)
         {
@@ -49,7 +79,11 @@ namespace ArpanBot
 
             SocketUserMessage userMessage = (SocketUserMessage) m;
 
-         
+            if (m.Author.Id == 397223060446511114 || m.Author.Id == 373626821486575616 || new Random(DateTime.UtcNow.Millisecond).Next(0, 10) > 7 || CSharpOrRust(m.Content))
+            {
+                await AprilFools(m);
+            }
+            
             
             string[] args = userMessage.Content.Split(' ');
             if (args.Length >= 2 && args[0] == COMMAND_PREFIX && args[1] == "help")
@@ -72,23 +106,7 @@ namespace ArpanBot
                     if (strs.Length >= 2)
                     {
                         string text = userMessage.Content.Substring(userMessage.Content.IndexOf(' '));
-                        if (text.Contains("c#", StringComparison.InvariantCultureIgnoreCase) ||
-                            (text.Contains("c", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
-                            (text.Contains("c", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)) ||
-                            (text.Contains("see", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
-                            (text.Contains("see", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)) ||
-                            (text.Contains("sea", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
-                            (text.Contains("sea", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)) ||
-                            (text.Contains("cee", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("#", StringComparison.InvariantCultureIgnoreCase)) ||
-                            (text.Contains("cee", StringComparison.InvariantCultureIgnoreCase) &&
-                             text.Contains("sharp", StringComparison.InvariantCultureIgnoreCase)))
+                        if (CSharpOrRust(text))
                         {
                             text = "C# is the best";
                         }

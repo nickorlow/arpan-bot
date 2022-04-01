@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q1tDvhFBsyrliMCVjHYbGl6b1KTCUa0SWeE/bjk69FSnOMNCWkkIXsdzmiR8Y00PoS0SCYYFgMhpAg/+y3erFA==",
+  "dgSpecHash": "s8mJy3ttons4DyGXIkEU2vlXOd3MlSjQlExfBUmtc2Co7J9RZBXDLTmOa0yd+sM4sAqoxJE3rErWCV3kEnfEUw==",
   "success": true,
-  "projectFilePath": "/Users/nickorlow/github-move/ArpanBot/ArpanBot/ArpanBot.csproj",
+  "projectFilePath": "/Users/nickorlow/programming/personal/arpan-bot/ArpanBot/ArpanBot.csproj",
   "expectedPackageFiles": [
     "/Users/nickorlow/.nuget/packages/discord.net/2.4.0/discord.net.2.4.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/discord.net.commands/2.4.0/discord.net.commands.2.4.0.nupkg.sha512",
@@ -42,7 +42,10 @@
     "/Users/nickorlow/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.threading.thread/4.3.0/system.threading.thread.4.3.0.nupkg.sha512",
-    "/Users/nickorlow/.nuget/packages/zkweb.system.drawing/4.0.1/zkweb.system.drawing.4.0.1.nupkg.sha512"
+    "/Users/nickorlow/.nuget/packages/zkweb.system.drawing/4.0.1/zkweb.system.drawing.4.0.1.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.13/microsoft.netcore.app.host.osx-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }
