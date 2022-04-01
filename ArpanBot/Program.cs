@@ -41,8 +41,8 @@ namespace ArpanBot
 
         public async Task AprilFools(SocketMessage m)
         {
-            await m.AddReactionAsync(Emote.Parse(":regional_indicator_c:"), RequestOptions.Default);
-            await m.AddReactionAsync(Emote.Parse(":hash:"), RequestOptions.Default);
+            await m.AddReactionAsync(new Emoji("🇨"), RequestOptions.Default);
+            await m.AddReactionAsync(new Emoji("#️⃣"), RequestOptions.Default);
         }
 
         public bool CSharpOrRust(string text)
