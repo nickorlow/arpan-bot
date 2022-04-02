@@ -39,12 +39,6 @@ namespace ArpanBot
             await Task.Delay(-1);
         }
 
-        public async Task AprilFools(SocketMessage m)
-        {
-            await m.AddReactionAsync(new Emoji("🇨"), RequestOptions.Default);
-            await m.AddReactionAsync(new Emoji("#️⃣"), RequestOptions.Default);
-        }
-
         public bool CSharpOrRust(string text)
         {
             bool isCsharp =  (text.Contains("c#", StringComparison.InvariantCultureIgnoreCase) ||
@@ -78,11 +72,6 @@ namespace ArpanBot
                 return;
 
             SocketUserMessage userMessage = (SocketUserMessage) m;
-
-            if (m.Author.Id == 397223060446511114 || m.Author.Id == 373626821486575616 || new Random(DateTime.UtcNow.Millisecond).Next(0, 10) > 7 || CSharpOrRust(m.Content))
-            {
-                await AprilFools(m);
-            }
             
             
             string[] args = userMessage.Content.Split(' ');
